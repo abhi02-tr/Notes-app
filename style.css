@@ -34,7 +34,7 @@ body{
 .add-box .icon{
     height: 70px;
     width: 70px;
-    
+    cursor: pointer;
     border: 2px dashed blue;
     border-radius: 50%;
 }
@@ -104,7 +104,7 @@ body{
     transition: transform 0.2s ease;
 }
 
-.settings:hover .menu {
+.settings.show .menu {
     transform: scale(1);
 }
 
@@ -119,4 +119,90 @@ body{
 
 .settings .menu p:hover {
     background: rgba(0, 0, 0, 0.2);
+}
+
+.popup-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.popup-box .popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    width: 500px;
+    max-width: 400px;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+}
+
+.popup-box, .popup{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.popup-box.show, .popup {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.popup .content {
+    background-color: whitesmoke;
+}
+
+.popup .content header{
+    padding: 15px 25px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content header{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.content header span{
+    color: #8b8989;
+    cursor: pointer;
+    font-size: 23px;
+}
+
+.content form {
+    margin: 15px 25px 35px;
+
+}
+
+.content form input, textarea{
+    width: 100%;
+    padding: 8px;
+    /* margin: 5px; */
+    font-size: 17px;
+    border: 1px solid #8b8989;
+    border-radius: 4px;
+}
+
+.content form .row{
+    margin: 15px 0;
+}
+
+.content button{
+    width: 100%;
+    margin: 12px 0;
+    height: 30px;
+    font-size: 17px;
+    font-weight: 500;
+    border: 1px solid #8b8989;
+    border-radius: 4px;
+    background: bisque;
+}
+
+.content button:hover{
+    color: bisque;
+    background: rgba(0, 0, 0, 0.4);
 }
